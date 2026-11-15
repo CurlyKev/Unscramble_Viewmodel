@@ -34,6 +34,7 @@ Se completaron las etapas del codelab: agregar ViewModel y estado, mostrar palab
 - **Límite de la partida:** la décima respuesta u omisión cierra el juego sin crear una ronda 11. Después del final, el modelo ignora nuevas acciones.
 - **Reinicio incompleto:** reiniciar limpia puntos, palabras usadas, error e intento pendiente.
 - **SDK faltante:** se instalaron Android SDK Platform 35 y Build-Tools 35.0.0. Ante la espera del instalador automático, se descargaron los paquetes oficiales y se verificaron sus sumas SHA-1 antes de instalarlos.
+- **GitHub Actions:** el instalador heredado intentaba descargar el paquete retirado `tools`. Se usa el SDK preinstalado del servidor Ubuntu 24.04 y acciones compatibles con Node.js 24.
 - **Versiones del ejemplo:** se conservaron Gradle 8.12, AGP 8.8.0 y Kotlin 2.1.0 del código inicial. Las dependencias Lifecycle se alinearon en 2.8.7. Para compilar se usó JDK 21 en lugar del JDK 25 predeterminado del equipo.
 
 Se mantiene la comparación sin distinguir mayúsculas del codelab y se añade tolerancia a espacios al principio o al final.
