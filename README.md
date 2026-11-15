@@ -18,13 +18,6 @@ La pantalla inicial del proyecto tenía una palabra fija y botones sin acciones.
 - **Flujo unidireccional:** el estado llega a los componentes y los eventos de escribir, enviar, omitir o reiniciar vuelven al ViewModel mediante callbacks.
 - **Ciclo de vida:** `viewModel()` conserva la partida y el texto pendiente cuando se recrea la actividad, como ocurre al rotar el dispositivo. Esto no implica guardar una partida después de cerrar el proceso.
 
-| Archivo | Responsabilidad |
-| --- | --- |
-| `app/src/main/java/com/example/unscramble/ui/GameUiState.kt` | Datos inmutables de la pantalla. |
-| `app/src/main/java/com/example/unscramble/ui/GameViewModel.kt` | Selección sin repeticiones, mezcla, validación, puntos y reinicio. |
-| `app/src/main/java/com/example/unscramble/ui/GameScreen.kt` | Interfaz, entrada, botones y diálogo final. |
-| `app/src/main/java/com/example/unscramble/data/WordsData.kt` | Vocabulario original, diez rondas y veinte puntos por acierto. |
-
 Se completaron las etapas del codelab: agregar ViewModel y estado, mostrar palabras aleatorias, conectar la interfaz con el modelo, validar respuestas, omitir palabras, finalizar y reiniciar la partida.
 
 ## Problemas resueltos
@@ -58,13 +51,6 @@ En Windows, los comandos de terminal se ejecutan con `gradlew.bat`; en macOS/Lin
 
 Comprobaciones locales realizadas el **15 de noviembre de 2026**, con JDK 21 y el emulador **Medium Phone, Android 8.1 / API 27**:
 
-| Comprobación | Resultado |
-| --- | --- |
-| `:app:assembleDebug` | APK compilado correctamente. |
-| `:app:testDebugUnitTest` | 9 pruebas aprobadas, 0 fallos. |
-| `:app:lintDebug` | 0 errores; 10 advertencias (9 actualizaciones de dependencias y 1 etiqueta redundante). |
-| `:app:connectedDebugAndroidTest` | 4 pruebas de interfaz aprobadas, 0 fallos. |
-
 Las pruebas unitarias verifican inicio, mezcla, respuestas vacías e incorrectas, mayúsculas y espacios, puntuación, omisión, diez palabras sin repetir, fin de partida y reinicio. Las pruebas de interfaz verifican los botones, la acción Done del teclado, el mensaje de error, el diálogo con 200 puntos y Play Again. También rotan la actividad y la recrean, comprobando que se conservan el mismo ViewModel, la palabra, el contador, los puntos y el texto pendiente.
 
 Para repetir la verificación, iniciar un emulador o conectar un dispositivo y ejecutar:
@@ -83,9 +69,3 @@ Capturas reales obtenidas del emulador durante las pruebas de interfaz.
 | :---: | :---: | :---: |
 | <img src="docs/images/01-juego.png" alt="Segunda palabra con 20 puntos" width="240"> | <img src="docs/images/02-error.png" alt="Mensaje de respuesta incorrecta sin perder puntos" width="240"> | <img src="docs/images/03-final.png" alt="Dialogo final de la decima palabra con 200 puntos" width="240"> |
 
-
-## Autoría y licencia
-
-Repositorio de **CurlyKev**. Implementación, documentación y comprobaciones preparadas con asistencia de IA.
-
-El código inicial pertenece a **The Android Open Source Project**. Se conservan sus avisos de copyright y la licencia [Apache 2.0](LICENSE).
